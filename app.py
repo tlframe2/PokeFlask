@@ -19,7 +19,9 @@ def pokedex():
     # msg.media(pokemon_result['image_url'])
 
     body = request.values.get('Body', '').lower()
-    pokemon_result = mongo.db.pokemon.find_one({"name": body})
+    print(body)
+    pokemon_result = mongo.db.pokemon.find_one_or_404({"name": body})
+    print(pokemon_result)
     resp = MessagingResponse()
     msg = resp.message()
     msg.body(f"body is {body}")
