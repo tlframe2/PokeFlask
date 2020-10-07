@@ -20,7 +20,7 @@ def pokedex():
 
     body = request.values.get('Body', '').lower()
     print(body)
-    pokemon_result = mongo.db.pokemon.find_one_or_404({"name": body})
+    pokemon_result = mongo.db.pokemon.find_one_or_404({"name": "bulbasaur"})
     print(pokemon_result)
     resp = MessagingResponse()
     msg = resp.message()
