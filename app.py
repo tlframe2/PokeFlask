@@ -1,16 +1,22 @@
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
+from flask_pymongo import PyMongo
+import os
 
 app = Flask(__name__)
+app.config["MONGO_URI"] = os.environ["MONGO_URI"]
 
+mongo = PyMongo(app)
 
 @app.route('/pokedex', methods=['POST'])
 def pokedex():
-    incoming_msg = request.values.get('Body', '').lower()
+    submitted_name = request.values.get('Body', '').lower()
+    pokemon_result = mongo.db.pokemon.find_one_or_404({"name": name})
+    body = f"{pokemon_result['name']}\n{pokemon_result['description']}"
     resp = MessagingResponse()
     msg = resp.message()
-    msg.body(incoming_msg)
-    msg.media('https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png')
+    msg.body(body)
+    msg.media(pokemon_result['image_url'])
 
     return str(resp)
 

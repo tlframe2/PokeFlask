@@ -10,6 +10,8 @@ pokebase = "*"
 twilio = "*"
 flask = "*"
 gunicorn = "*"
+flask-pymongo = "*"
+dnspython = "*"
 
 [requires]
 python_version = "3.8"
