@@ -10,13 +10,18 @@ mongo = PyMongo(app)
 
 @app.route('/pokedex', methods=['POST'])
 def pokedex():
-    submitted_name = request.values.get('Body', '').lower()
-    pokemon_result = mongo.db.pokemon.find_one_or_404({"name": submitted_name})
-    body = f"{pokemon_result['name']}\n{pokemon_result['description']}"
+    # submitted_name = request.values.get('Body', '').lower()
+    # pokemon_result = mongo.db.pokemon.find_one_or_404({"name": submitted_name})
+    # body = f"{pokemon_result['name']}\n{pokemon_result['description']}"
+    # resp = MessagingResponse()
+    # msg = resp.message()
+    # msg.body(body)
+    # msg.media(pokemon_result['image_url'])
+
+    body = request.values.get('Body', '').lower()
     resp = MessagingResponse()
     msg = resp.message()
-    msg.body(body)
-    msg.media(pokemon_result['image_url'])
+    msg.body(f"body is {body}")
 
     return str(resp)
 
