@@ -28,5 +28,11 @@ def pokedex():
 
     return str(resp)
 
+@app.route('/test/<name>', methods=['GET'])
+def test(name):
+    pokemon_result = mongo.db.pokemon.find_one_or_404({"name": name})
+    print(pokemon_result['name'])
+    return { "name": pokemon_result['name'], "types": pokemon_result['types'] }
+
 if __name__ == "__main__":
     app.run()
