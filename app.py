@@ -34,5 +34,9 @@ def test(name):
     print(pokemon_result['name'])
     return { "name": pokemon_result['name'], "types": pokemon_result['types'] }
 
+@app.route('/test2', methods=['GET'])
+def test2():
+    return { "msg": "success" }
+
 if __name__ == "__main__":
     app.run()
