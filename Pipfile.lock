@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "66717a5558cf1112b3a7d45d20d08525dfe44685b429795f589bc894dec11685"
+            "sha256": "ca25d30462dc60e74c283cae473fc94a63ed75ef9285cdd4a17df8ddc2ff33c0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -76,6 +76,13 @@
             ],
             "version": "==2.10"
         },
+        "ipaddress": {
+            "hashes": [
+                "sha256:6e0f4a39e66cb5bb9a137b00276a2eff74f93b71dcbdad6f10ff7df9d3557fcc",
+                "sha256:b7f8e0369580bb4a24d5ba1d7cc29660a4a6987763faf1d8a8046830e020e7e2"
+            ],
+            "version": "==1.0.23"
+        },
         "itsdangerous": {
             "hashes": [
                 "sha256:321b033d07f2a4136d3ec762eac9f16a10ccd60f53c0c91af90217ace7ba1f19",
@@ -144,6 +151,9 @@
             "version": "==1.7.1"
         },
         "pymongo": {
+            "extras": [
+                "tls"
+            ],
             "hashes": [
                 "sha256:03dc64a9aa7a5d405aea5c56db95835f6a2fa31b3502c5af1760e0e99210be30",
                 "sha256:05fcc6f9c60e6efe5219fbb5a30258adb3d3e5cbd317068f3d73c09727f2abb6",
@@ -199,6 +209,7 @@
                 "sha256:ef76535776c0708a85258f6dc51d36a2df12633c735f6d197ed7dfcaa7449b99",
                 "sha256:f6efca006a81e1197b925a7d7b16b8f61980697bb6746587aad8842865233218"
             ],
+            "index": "pypi",
             "version": "==3.11.0"
         },
         "pytz": {

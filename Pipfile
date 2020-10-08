@@ -12,6 +12,7 @@ flask = "*"
 gunicorn = "*"
 flask-pymongo = "*"
 dnspython = "*"
+pymongo = {extras = ["tls"],version = "*"}
 
 [requires]
 python_version = "3.8"
