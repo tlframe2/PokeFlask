@@ -28,6 +28,7 @@ def pokedex():
     #msg.media(pokemon_result['image_url'])
 
     msg.body(pokemon_result['description'])
+    msg.media(pokemon_result['image_url'])
 
     return str(resp)
 
