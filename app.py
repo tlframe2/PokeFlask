@@ -18,12 +18,16 @@ pokemon = db.pokemon
 @app.route('/pokedex', methods=['POST'])
 def pokedex():
     name = request.values.get('Body', '').lower()
+    print(name)
     pokemon_result = pokemon.find_one({ "name":  name })
-    body = f"{pokemon_result['name']}\n{pokemon_result['description']}"
+    print(pokemon_result)
+    #body = f"{pokemon_result['name']}\n{pokemon_result['description']}"
     resp = MessagingResponse()
     msg = resp.message()
-    msg.body(body)
-    msg.media(pokemon_result['image_url'])
+    #msg.body(body)
+    #msg.media(pokemon_result['image_url'])
+
+    msg.body(name)
 
     return str(resp)
 
