@@ -21,14 +21,14 @@ def pokedex():
     print(name)
     pokemon_result = pokemon.find_one({ "name":  name })
     print(pokemon_result)
-    #body = f"{pokemon_result['name']}\n{pokemon_result['description']}"
+    body = f"{pokemon_result['name']}\nTypes: {pokemon_result['types']}\n{pokemon_result['description']}"
     resp = MessagingResponse()
     msg = resp.message()
-    #msg.body(body)
-    #msg.media(pokemon_result['image_url'])
-
-    msg.body(pokemon_result['description'])
+    msg.body(body)
     msg.media(pokemon_result['image_url'])
+
+    # msg.body(pokemon_result['description'])
+    # msg.media(pokemon_result['image_url'])
 
     return str(resp)
 
