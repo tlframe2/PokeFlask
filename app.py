@@ -13,7 +13,7 @@ client = MongoClient(os.environ["MONGO_URI"])
 
 db = client.pokeflask
 
-collection = db.pokemon
+pokemon = db.pokemon
 
 # @app.route('/pokedex', methods=['POST'])
 # def pokedex():
@@ -35,11 +35,14 @@ collection = db.pokemon
 
 #     return str(resp)
 
-# @app.route('/test/<name>', methods=['GET'])
-# def test(name):
-#     pokemon_result = mongo.db.pokemon.find_one_or_404({"name": name})
-#     print(pokemon_result['name'])
-#     return { "name": pokemon_result['name'], "types": pokemon_result['types'] }
+@app.route('/test/<name>', methods=['GET'])
+def test(name):
+    # pokemon_result = mongo.db.pokemon.find_one_or_404({"name": name})
+    # print(pokemon_result['name'])
+    # return { "name": pokemon_result['name'], "types": pokemon_result['types'] }
+
+    pokemon_result = pokemon.find_one({"name": name})
+    return { "name": pokemon_result['name'], "description": pokemon_result['description'] }
 
 @app.route('/test2', methods=['GET'])
 def test2():
