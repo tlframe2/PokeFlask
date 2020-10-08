@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ca25d30462dc60e74c283cae473fc94a63ed75ef9285cdd4a17df8ddc2ff33c0"
+            "sha256": "e0ab67f1557fec4a3a667b12940ee1b8c2a06f2658fa23061ea26df3b743678b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -52,14 +52,6 @@
             ],
             "index": "pypi",
             "version": "==1.1.2"
-        },
-        "flask-pymongo": {
-            "hashes": [
-                "sha256:620eb02dc8808a5fcb90f26cab6cba9d6bf497b15032ae3ca99df80366e33314",
-                "sha256:8a9577a2c6d00b49f21cb5a5a8d72561730364a2d745551a85349ab02f86fc73"
-            ],
-            "index": "pypi",
-            "version": "==2.3.0"
         },
         "gunicorn": {
             "hashes": [
@@ -134,14 +126,6 @@
                 "sha256:e8313f01ba26fbbe36c7be1966a7b7424942f670f38e666995b88d012765b9be"
             ],
             "version": "==1.1.1"
-        },
-        "pokebase": {
-            "hashes": [
-                "sha256:1fab389df211f22d0987e8aae45d0d19b5db7b3eb0c92dca48283f74e9df4f70",
-                "sha256:a5881566bfaa6f9a860b847be0a648f23b02babdaf79ab96f6a6d0295b497c34"
-            ],
-            "index": "pypi",
-            "version": "==1.3.0"
         },
         "pyjwt": {
             "hashes": [

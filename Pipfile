@@ -6,11 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-pokebase = "*"
 twilio = "*"
 flask = "*"
 gunicorn = "*"
-flask-pymongo = "*"
 dnspython = "*"
 pymongo = {extras = ["tls"],version = "*"}
 
