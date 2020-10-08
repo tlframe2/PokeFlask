@@ -17,7 +17,7 @@ pokemon = db.pokemon
 
 @app.route('/pokedex', methods=['POST'])
 def pokedex():
-    name = request.values.get('Body', '').lower()
+    name = request.values.get('Body', '').lower().strip()
     print(name)
     pokemon_result = pokemon.find_one({ "name":  name })
     print(pokemon_result)
