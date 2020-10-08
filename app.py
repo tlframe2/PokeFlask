@@ -15,25 +15,17 @@ db = client.pokeflask
 
 pokemon = db.pokemon
 
-# @app.route('/pokedex', methods=['POST'])
-# def pokedex():
-#     # submitted_name = request.values.get('Body', '').lower()
-#     # pokemon_result = mongo.db.pokemon.find_one_or_404({"name": submitted_name})
-#     # body = f"{pokemon_result['name']}\n{pokemon_result['description']}"
-#     # resp = MessagingResponse()
-#     # msg = resp.message()
-#     # msg.body(body)
-#     # msg.media(pokemon_result['image_url'])
+@app.route('/pokedex', methods=['POST'])
+def pokedex():
+    name = request.values.get('Body', '').lower()
+    pokemon_result = pokemon.find_one({ "name":  name })
+    body = f"{pokemon_result['name']}\n{pokemon_result['description']}"
+    resp = MessagingResponse()
+    msg = resp.message()
+    msg.body(body)
+    msg.media(pokemon_result['image_url'])
 
-#     body = request.values.get('Body', '').lower()
-#     print(body)
-#     pokemon_result = mongo.db.pokemon.find_one_or_404({"name": "bulbasaur"})
-#     print(pokemon_result)
-#     resp = MessagingResponse()
-#     msg = resp.message()
-#     msg.body(f"body is {body}")
-
-#     return str(resp)
+    return str(resp)
 
 @app.route('/test/<name>', methods=['GET'])
 def test(name):
